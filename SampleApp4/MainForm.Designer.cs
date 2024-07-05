@@ -33,6 +33,7 @@ partial class MainForm
         label1 = new Label();
         SavedLabel = new Label();
         RejectedLabel = new Label();
+        ViewDataButton = new Button();
         SuspendLayout();
         // 
         // ReadAndValidateButton
@@ -52,7 +53,7 @@ partial class MainForm
         ResultsTextBox.Multiline = true;
         ResultsTextBox.Name = "ResultsTextBox";
         ResultsTextBox.ScrollBars = ScrollBars.Both;
-        ResultsTextBox.Size = new Size(776, 367);
+        ResultsTextBox.Size = new Size(776, 358);
         ResultsTextBox.TabIndex = 2;
         // 
         // label1
@@ -82,11 +83,23 @@ partial class MainForm
         RejectedLabel.TabIndex = 5;
         RejectedLabel.Text = "Rejected 0";
         // 
+        // ViewDataButton
+        // 
+        ViewDataButton.Enabled = false;
+        ViewDataButton.Location = new Point(694, 12);
+        ViewDataButton.Name = "ViewDataButton";
+        ViewDataButton.Size = new Size(94, 29);
+        ViewDataButton.TabIndex = 6;
+        ViewDataButton.Text = "Data";
+        ViewDataButton.UseVisualStyleBackColor = true;
+        ViewDataButton.Click += ViewDataButton_Click;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 481);
+        Controls.Add(ViewDataButton);
         Controls.Add(RejectedLabel);
         Controls.Add(SavedLabel);
         Controls.Add(label1);
@@ -106,4 +119,5 @@ partial class MainForm
     private Label label1;
     private Label SavedLabel;
     private Label RejectedLabel;
+    private Button ViewDataButton;
 }

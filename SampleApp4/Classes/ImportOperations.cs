@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Ganss.Excel;
 using SampleApp4.Data;
 using SampleApp4.Models;
@@ -10,12 +6,13 @@ using SampleApp4.Models;
 namespace SampleApp4.Classes;
 internal class ImportOperations
 {
-    public static async Task<(string badRecord, int saved, int rejected)> Validate(string fileName = "Products.xlsx")
+    public static async Task<(string badRecord, List<Products> badRecords, int saved, int rejected)> Validate(string fileName = "Products.xlsx")
     {
         ExcelMapper excel = new();
         var products = (await excel.FetchAsync<Products>(fileName, nameof(Products))).ToList();
         
         List<Products> goodList = [];
+        List<Products> badList = [];
         StringBuilder builder = new();
 
         int rejected = 0;
@@ -32,6 +29,9 @@ internal class ImportOperations
                 {
                     builder.AppendLine($"{index + 1,-10} {error.PropertyName,-30}{error.AttemptedValue}");
                 }
+
+                products[index].RowIndex = index + 1;
+                badList.Add(products[index]);
             }
             else
             {
@@ -51,7 +51,7 @@ internal class ImportOperations
 
         }
 
-        return (builder.ToString(), saved, rejected);
+        return (builder.ToString(), badList, saved, rejected);
 
     }
 }
