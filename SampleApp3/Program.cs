@@ -53,10 +53,12 @@ internal partial class Program
             ExcelMapper excel = new();
             await using var context = new Context();
             
-            var customers = (await excel.FetchAsync<Customers>(excelFile, nameof(Customers)))
+            var customers = (
+                    await excel.FetchAsync<Customers>(excelFile, nameof(Customers)))
                 .ToList();
             
-            var germanyItems = customers.Where(c => c.Country == "Germany").ToArray();
+            var germanyItems = 
+                customers.Where(c => c.Country == "Germany").ToArray();
 
             foreach (var c in germanyItems)
                 customers.Remove(c);
