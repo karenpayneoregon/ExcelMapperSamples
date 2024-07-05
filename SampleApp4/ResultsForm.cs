@@ -3,6 +3,15 @@ using SampleApp4.Models;
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
 namespace SampleApp4;
+
+/*
+ * For displaying invalid data from the Excel file
+ * User would correct data then hit the checkbox.
+ *
+ * There is still work to be done. This is because
+ * 1. Gives the reader time to learn
+ * 2. Not everyone will want the same outcome
+ */
 public partial class ResultsForm : Form
 {
     private BindingSource _bindingSource = new();
@@ -36,7 +45,9 @@ public partial class ResultsForm : Form
         List<ProductItem> products = _bindingList.Where(pc => pc.Process).ToList();
         if (products.Count> 0)
         {
-            // save data, in this case two properties product name and supplier
+            // if you do not trust the operator, run validator again
+            // In this case we need to validate only two properties so anther validator is required.
+            // if valid, save data else display error message
         }
     }
 }
