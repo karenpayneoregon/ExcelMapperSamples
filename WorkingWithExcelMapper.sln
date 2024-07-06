@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationLibrary", "Valida
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp4", "SampleApp4\SampleApp4.csproj", "{856EA090-6ACA-4689-8974-66160E5A59DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp5", "SampleApp5\SampleApp5.csproj", "{77C61956-FBA3-470C-A054-19ACA7E71738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp6", "SampleApp6\SampleApp6.csproj", "{A03DF2DE-30AF-49DE-8A4D-85338A185E4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,14 @@ Global
 		{856EA090-6ACA-4689-8974-66160E5A59DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{856EA090-6ACA-4689-8974-66160E5A59DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{856EA090-6ACA-4689-8974-66160E5A59DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C61956-FBA3-470C-A054-19ACA7E71738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C61956-FBA3-470C-A054-19ACA7E71738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C61956-FBA3-470C-A054-19ACA7E71738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C61956-FBA3-470C-A054-19ACA7E71738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03DF2DE-30AF-49DE-8A4D-85338A185E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03DF2DE-30AF-49DE-8A4D-85338A185E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03DF2DE-30AF-49DE-8A4D-85338A185E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03DF2DE-30AF-49DE-8A4D-85338A185E4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
