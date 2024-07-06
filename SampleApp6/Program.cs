@@ -1,6 +1,6 @@
 ﻿using Ganss.Excel;
-using NPOI.SS.Formula.Functions;
 using SampleApp6.Classes;
+using static ObjectDumper;
 
 namespace SampleApp6;
 
@@ -12,7 +12,7 @@ internal partial class Program
         var excel = new ExcelMapper("Products.xlsx");
         var products = excel.Fetch<Wines>().ToList();
 
-        AnsiConsole.MarkupLine(ObjectDumper.Dump(products).Replace("WineType:", "[cyan]WineType:[/]"));
+        AnsiConsole.MarkupLine(Dump(products).Replace("WineType:", "[cyan]WineType:[/]"));
 
         SpectreConsoleHelpers.ExitPrompt();
     }
