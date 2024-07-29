@@ -7,6 +7,16 @@ using System.Threading.Tasks;
 namespace SampleApp1.Classes;
 internal class SqlStatements
 {
+    public static string GetNorthWindOrders => 
+        """
+        SELECT     O.OrderID,
+                   O.CustomerIdentifier,
+                   C.CompanyName,
+                   O.OrderDate
+         FROM      dbo.Orders AS O
+        INNER JOIN dbo.Customers AS C
+           ON O.CustomerIdentifier = C.CustomerIdentifier;
+        """;
     public static string GetNorthWindCustomersForExport => 
         """
         SELECT     C.CustomerIdentifier,
