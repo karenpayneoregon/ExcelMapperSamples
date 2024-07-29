@@ -13,6 +13,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Scripts\Script1.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Scripts\Script1.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.6" />
 		<PackageReference Include="ConsoleConfigurationLibrary" Version="1.0.0.2" />
 	</ItemGroup>
