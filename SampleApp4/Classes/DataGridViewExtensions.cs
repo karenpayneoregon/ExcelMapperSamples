@@ -5,13 +5,17 @@ namespace SampleApp4.Classes;
 /// <summary>
 /// Methods to move current row up/down
 /// </summary>
-public static class DataGridViewExtensions
+public static partial class DataGridViewExtensions
 {
+
     /// <summary>
-    /// Set each column width to the widest data in a column
+    /// Expands the columns of the specified <see cref="DataGridView"/> to fit their content.
     /// </summary>
-    /// <param name="source"></param>
-    /// <param name="sizable"></param>
+    /// <param name="source">The <see cref="DataGridView"/> whose columns are to be expanded.</param>
+    /// <param name="sizable">
+    /// A boolean value indicating whether the columns should be resizable after being expanded.
+    /// If <c>true</c>, the columns will be resizable; otherwise, they will not be resizable.
+    /// </param>
     public static void ExpandColumns(this DataGridView source, bool sizable = true)
     {
         foreach (DataGridViewColumn col in source.Columns)
@@ -41,12 +45,14 @@ public static class DataGridViewExtensions
     public static void FixHeaders(this DataGridView source)
     {
         string SplitCamelCase(string sender)
-            => string.Join(" ", Regex.Matches(sender,
-                @"([A-Z][a-z]+)").Select(m => m.Value));
+            => string.Join(" ", SplitCamelCaseRegex().Matches(sender).Select(m => m.Value));
 
         for (int index = 0; index < source.Columns.Count; index++)
         {
             source.Columns[index].HeaderText = SplitCamelCase(source.Columns[index].HeaderText);
         }
     }
+
+    [GeneratedRegex(@"([A-Z][a-z]+)")]
+    private static partial Regex SplitCamelCaseRegex();
 }

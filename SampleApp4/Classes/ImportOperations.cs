@@ -6,6 +6,22 @@ using SampleApp4.Models;
 namespace SampleApp4.Classes;
 internal class ImportOperations
 {
+    /// <summary>
+    /// Validates the products data from the specified Excel file.
+    /// </summary>
+    /// <param name="fileName">The name of the Excel file to validate. Defaults to "Products.xlsx".</param>
+    /// <returns>
+    /// A tuple containing:
+    /// - A string with details of the bad records.
+    /// - A list of <see cref="Products"/> representing the bad records.
+    /// - The number of successfully saved records.
+    /// - The number of rejected records.
+    /// </returns>
+    /// <remarks>
+    /// This method reads the products data from the specified Excel file, validates each product, 
+    /// and categorizes them into good and bad records. Good records are saved to the database, 
+    /// while bad records are returned along with details of the validation errors.
+    /// </remarks>
     public static async Task<(string badRecord, List<Products> badRecords, int saved, int rejected)> Validate(string fileName = "Products.xlsx")
     {
         ExcelMapper excel = new();

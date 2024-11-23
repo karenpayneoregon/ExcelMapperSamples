@@ -8,6 +8,10 @@
 /// </summary>
 public static class ExceptionHelpers
 {
+    /// <summary>
+    /// Writes the provided exception to the console using custom colors.
+    /// </summary>
+    /// <param name="exception">The exception to be written to the console.</param>
     public static void ColorWithCyanFuchsia(this Exception exception)
     {
         AnsiConsole.WriteException(exception, new ExceptionSettings

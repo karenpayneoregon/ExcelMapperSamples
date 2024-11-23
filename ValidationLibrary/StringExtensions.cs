@@ -11,13 +11,8 @@ public static class StringExtensions
     /// </remarks>
     public static bool IsOnlyAsciiLetters(this string text)
     {
-
-        foreach (var item in text)
+        foreach (var item in text.Where(item => !char.IsNumber(item)))
         {
-            if (char.IsNumber(item))
-            {
-                continue;
-            }
             switch (item)
             {
                 case >= 'A' and <= 'Z':
@@ -33,6 +28,7 @@ public static class StringExtensions
                     return false;
             }
         }
+
         return true;
     }
 }
